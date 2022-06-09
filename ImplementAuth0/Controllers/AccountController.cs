@@ -18,13 +18,8 @@ namespace ImplementAuth0.Controllers
         {
             return View();
         }
-        private IAuthenticationManager AuthenticationManager
-        {
-            get
-            {
-                return HttpContext.GetOwinContext().Authentication;
-            }
-        }
+        private IAuthenticationManager AuthenticationManager { set; get; }
+
 
         [HttpGet]
         public ActionResult Login(string returnUrl = "/")
@@ -86,7 +81,7 @@ namespace ImplementAuth0.Controllers
         [Authorize]
         public ActionResult Logout()
         {
-            HttpContext.GetOwinContext().Authentication.SignOut();
+            AuthenticationManager.SignOut();
 
             return RedirectToAction("Index", "Home");
         }
