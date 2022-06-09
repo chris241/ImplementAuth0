@@ -1,10 +1,12 @@
 ﻿using Auth0.AuthenticationApi;
 using Auth0.AuthenticationApi.Models;
 using ImplementAuth0.Models;
+using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using System;
 using System.Configuration;
+using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -18,10 +20,15 @@ namespace ImplementAuth0.Controllers
         {
             return View();
         }
-        private IAuthenticationManager AuthenticationManager { set; get; }
+        private IAuthenticationManager AuthenticationManager
+        {
+           set;  get; 
+        }
+
 
 
         [HttpGet]
+
         public ActionResult Login(string returnUrl = "/")
         {
             ViewData["ReturnUrl"] = returnUrl;
@@ -49,7 +56,7 @@ namespace ImplementAuth0.Controllers
                         ClientId = auth0ClientId,
                         ClientSecret = auth0ClientSecret,
                         Scope = "openid profile",
-                        Realm = "Username-Password-Authentication", // Specify the correct name of your DB connection
+                        Realm = "CustomerApplication", // Specify the correct name of your DB connection
                         Username = vm.EmailAddress,
                         Password = vm.Password
                     });
