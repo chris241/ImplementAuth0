@@ -51,6 +51,9 @@
     <Reference Include="Auth0.Core, Version=7.16.0.0, Culture=neutral, PublicKeyToken=afe355c419914736, processorArchitecture=MSIL">
       <HintPath>..\packages\Auth0.Core.7.16.0\lib\net452\Auth0.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Kentor.OwinCookieSaver, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Kentor.OwinCookieSaver.1.1.1\lib\net452\Kentor.OwinCookieSaver.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.5.0\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
@@ -164,6 +167,7 @@
     </Compile>
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

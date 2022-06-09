@@ -1,14 +1,12 @@
 ﻿using Auth0.AuthenticationApi;
 using Auth0.AuthenticationApi.Models;
 using ImplementAuth0.Models;
+using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ImplementAuth0.Controllers
